@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Work — Het Sonkusare</title>
+  <meta name="description" content="All video work by Het Sonkusare: healthcare, sports, anime, typography, motion graphics, reels and behind-the-scenes.">
+  <meta name="theme-color" content="#0c0c0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="brand">Het Sonkusare</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">Hire Me</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <a href="index.html" class="label">← Back to home</a>
+        <h1>All Work</h1>
+        <p>34 videos. Pick a category, or click any video to watch it with sound. In the player, use the arrows to move to the next video.</p>
+      </div>
+    </section>
+
+    <div class="sticky-filters"><div class="wrap"><div class="filters" data-for="all"></div></div></div>
+
+    <section class="wrap" style="padding-bottom:64px">
+      <div class="grid" data-grid="all"></div>
+    </section>
+
+    <section class="contact" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <h2>Like what you see?</h2>
+        <p>Let's talk about your next video.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:hetsonkusare7@gmail.com">Email Me</a>
+          <a class="btn btn-ghost" href="https://wa.me/918780200854" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>© 2026 Het Sonkusare</span><a href="index.html">← Home</a></div>
+  </footer>
+
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="lb-top"><div class="lb-title"></div><button class="lb-close" aria-label="Close">×</button></div>
+    <div class="lb-stage">
+      <button class="lb-nav lb-prev" aria-label="Previous">←</button>
+      <button class="lb-nav lb-next" aria-label="Next">→</button>
+    </div>
+    <div class="lb-strip"></div>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

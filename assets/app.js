@@ -7,7 +7,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const THUMB = (w) => `media/thumbs/${w.id}.jpg`;
   // Compressed web copies live in /videos (same folder names, always .mp4).
-  const SRC = (w) => encodeURI(`videos/${w.f.replace(/\.[^.]+$/, ".mp4")}`);
+  const SRC = (w) => encodeURI(`videos/${w.f}`);
   const byId = Object.fromEntries(WORKS.map((w) => [w.id, w]));
   const inCat = (c) => WORKS.filter((w) => w.c === c);
   const isTall = (w) => w.o === "v" || w.o === "s";
@@ -19,7 +19,6 @@
     <button class="card" data-id="${w.id}" aria-label="Play ${w.t}">
       <div class="media ${isTall(w) ? "tall" : "wide"}">
         <img loading="lazy" decoding="async" src="${THUMB(w)}" alt="">
-        ${w.ai ? `<span class="badge">Made with Claude</span>` : ""}
         <span class="playbtn"></span>
         <span class="dur">${fmt(w.d)}</span>
       </div>
@@ -77,7 +76,6 @@
     wire(box, () => ids);
   });
   $$("[data-count]").forEach((el) => { el.textContent = el.dataset.count === "all" ? WORKS.length : inCat(el.dataset.count).length; });
-  $$("[data-count-ai]").forEach((el) => { el.textContent = WORKS.filter((w) => w.ai).length; });
   const clients = $("[data-clients]");
   if (clients) clients.innerHTML = CLIENTS.map((c) => `<span>${c}</span>`).join("");
 
@@ -136,7 +134,7 @@
     v.addEventListener("ended", () => { if (idx < ids.length - 1) step(1); }); // auto-play next
     stage.prepend(v);
     v.play().catch(() => {});
-    title.innerHTML = `${w.t}<small>${w.s || CATS[w.c].name}${w.ai ? " · Made with Claude" : ""} · ${idx + 1} of ${ids.length}</small>`;
+    title.innerHTML = `${w.t}<small>${w.s || CATS[w.c].name} ·${idx + 1} of ${ids.length}</small>`;
     $$("button", strip).forEach((b, k) => b.classList.toggle("on", k === idx));
     $("button.on", strip)?.scrollIntoView({ inline: "center", block: "nearest" });
   }

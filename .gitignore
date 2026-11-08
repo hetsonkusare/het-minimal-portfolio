@@ -1,2 +1,7 @@
 .DS_Store
 .claude/
+
+# Full-size original videos (the site uses the compressed copies in videos/)
+media/Client/
+media/Cluade Edit/
+media/Cluade Animation/
